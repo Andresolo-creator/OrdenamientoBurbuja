@@ -3,23 +3,30 @@ import java.util.Arrays;
 
 public class OrdenamientoBurbuja {
 
-    public static void main(String[] args) {
-        int [] arr = {45,22,11,-4,7,3};
-        
-        System.out.println(Arrays.toString(arr));
-        //ordenar arreglo
-        int n = arr.length;
-        for(int i =0 ; i<n-1; i++){
-            for(int j= i+1 ; j<n ;j++){
-                if (arr[i] > arr[j]){
-                     int aux = arr [j];
-                     arr[j] = arr[i];
-                     arr[i]=aux;
-                }   
+    // Método ordenamiento burbuja optimizado
+    public static void burbuja(int[] arreglo) {
+        int n = arreglo.length;
+        boolean intercambio;
+        for (int i = 0; i < n - 1; i++) {
+            intercambio = false;
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arreglo[j] > arreglo[j + 1]) {
+                    // Intercambio de elementos
+                    int aux = arreglo[j];
+                    arreglo[j] = arreglo[j + 1];
+                    arreglo[j + 1] = aux;
+                    intercambio = true;
+                }
             }
+            if (!intercambio) break;
         }
-         //mostrar nuevamente el arreglo ordenado 
-         System.out.println(Arrays.toString(arr));
-                
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {45, 22, 11, -4, 7, 3};
+
+        System.out.println("Arreglo original: " + Arrays.toString(arr));
+        burbuja(arr); 
+        System.out.println("Arreglo ordenado: " + Arrays.toString(arr));
     }
 }
