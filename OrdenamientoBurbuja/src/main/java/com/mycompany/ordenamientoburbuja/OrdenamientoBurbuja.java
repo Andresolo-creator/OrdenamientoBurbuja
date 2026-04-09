@@ -14,11 +14,12 @@ public class OrdenamientoBurbuja {
                 if (arr[i] > arr[j]){
                      int aux = arr [j];
                      arr[j] = arr[i];
-                     arr[i]=aux
+                     arr[i]=aux;
                 }   
             }
         }
-           
+         //mostrar nuevamente el arreglo ordenado 
+         System.out.println(Arrays.toString(arr));
                 
     }
 }
